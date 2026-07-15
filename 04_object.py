@@ -107,3 +107,108 @@ print(10 / 2) # 5.0
 print(type(10 / 2)) # <class 'float'>
 
 # =========================================================
+
+print(3 + 3) # 6 (int)
+print(100 / 2) # 50.0 (float)
+print("hy") # hy (str)
+print(100 > 58) # True (bool)
+
+
+print(type(6)) # <class 'int'>
+print(type(100 / 2)) # <class 'float'>
+print(type("hy")) # <class 'str'>
+print(type(100 > 58)) # <class 'bool'>
+
+# print(100) # int
+# print(100.0) # float
+# print("100") # str
+print(type(100)) # <class 'int'>
+print(type(100.0)) # <class 'float'>
+print(type("100")) # <class 'str'>
+
+print(100 + 100) # 200
+print("100" + "100") # 100100
+# print("100" + 100) # TypeError
+
+# print(3 > 2)
+print(3 > 2) # True
+print(5 == 5) # True
+print(type(3 > 2)) # <class 'bool'>
+print(type(5 == 2)) # <class 'bool'>
+
+boy = 24
+print(type(boy)) # <class 'int'>
+boy = 24.7
+print(type(boy)) # <class 'float'>
+boy = "24"
+print(type(boy)) # <class 'str'>
+
+device_temp = 20 # int
+check_count = 30.0 # float
+device_name = "KDJ" # str
+is_normal = True # bool
+
+# =========================================================
+
+# 연산을 활용할 때 목(//)과 (%)나머지를 구하는 방법
+
+# print(7 // 2) < 3(몫)
+# print(7 % 2) < 1(나머지)
+# 보는 것 처럼 나누고 싶은 값을 목(//) 또는 나머지(%)를 활용
+
+# 거듭제곱(**)을 구하는 방법
+
+# print(2 ** 2) 8
+
+# 연산자 우선순위
+
+# print(2 + 3 * 4) # 14
+# print((2 + 3) * 4) # 20
+# 괄호를 사용해 +를 먼저 계산할 수 있게 사용
+
+# 계산을 변수에 저장하는 Tip
+
+# re = 3 + 5
+# print(re)
+# avg = ((80 + 90) / 2)
+
+# 복합 할당 연산자(+-) 사용
+
+# score = 100
+# score += 10 < 110
+# score -= 10 < 100
+# +로 하고 -도 해서 복합 연산자라고 얘기
+
+# score *= 5 < 500
+# score /= 2 < 250
+# 나눗셈과 곱셈도 사용 가능
+
+
+# =========================================================
+
+# 문자열 연결법
+
+# print("안녕" + "하세요")
+# print("안녕 " + "하세요")
+# print("안녕" + " " + "하세요")
+# print("안녕", "하세요")
+# 위 4가지 모두 (안녕 하세요)로 출력된다
+
+# print("하" * 3) # 하하하
+# 문자를 곱할수도 있다
+
+# ================  비교  연산자  =====================
+
+# 결과는 항상 True , False 로 나온다. (bool)
+# print(5 == 5) # True
+# print(5 != 3) # True 
+# != : False 로 사용할 수 있다
+
+# 크기비교를 할 때는 >=, <= 로 이상,이하도 사용할 수 있다.
+# 꼭 숫자열이 아니라 문자열도 비교를 할 수 있다. < 공백과 대소문자가 같아야 True가 나옴
+
+# =========================================================
+
+
+
+
