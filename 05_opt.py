@@ -56,5 +56,19 @@ print("안녕" * 5) # 안녕안녕안녕안녕안녕
 
 # ===============    실  습    ===================
 
+print(5 + 3) # 8
+print(5 - 3) # 2
+print(5 * 3) # 15
+print(5 / 3) # 1.6
+print(5 // 3) # 1
+print(5 % 3) # 2
+print(5 ** 3) # 125
 
+mouse = 20
+box = 30
+Keyboard = 50
+print(mouse + box + Keyboard) # 100
+print(100 / 3) # 33.3
+print(box ** 2) # 900
+print(20 * 30 * 50) # 30000
 
