@@ -153,3 +153,72 @@ mouse = "PYTHON"
 print(mouse[::-1]) # NOHTYP
 
 # ==============================================================
+# len() - 문자열의 길이 반환
+# len(문자열) 
+
+print("=== len() 활용 ===")
+
+print(len("Hello World")) # 11 -> 10글자이지만 공백을 포함해서 11이 나온다
+print(len("")) # 0 (빈 문자열은 0 출력)
+
+var = "한 시간만 더 하면 된다. 조금만 버티자 !"
+print(len(var)) # 24 -> 변수에 담긴 문자열의 길이도 출력 가능 !
+
+print(len("이것도") - len("가능할까")) 
+# len()은 int를 반환하기 때문에 연상 가능
+
+print("길이:", len(abc), "/ 마지막 인덱스 번호:", len(abc) - 1) # 길이: 26, 마지막 인덱스 번호: 25
+
+# 음수 인덱스를 쓰지 않고 마지막 인덱스 문자를 출력하고 싶을 때
+print(abc[len(abc) - 1]) # z
+
+num = "01011223344"
+print(len(num)) # 11
+
+# ================================================================
+# in - 특정 단어가 들어 있는지 True - Flase 로 확인
+# 찾을문자열 in 문자열
+print("고장" in "설비 고장 발생") # True
+print("정상" in "설비 고장 발생") # False
+print("설비에서 고장" in "설비 고장 발생") # False
+print("설비에서 고장" in "설비에서 고장이 났습니다.") # True
+
+# not in - 특정 단어가 안 들어 있는지 확인 
+# 들어 있으면 False, 없으면 True
+
+print("고장" not in "설비 고장 발생") # False
+print("정상" not in "설비 고장 발생") # True
+print("설비에서 고장" not in "설비 고장 발생") # True
+print("설비에서 고장" not in "설비에서 고장이 났습니다.") # False
+
+print(" " in "설비 고장 발생") # True
+# 따옴표로 감싼 공백(space bar)는 "한 글자"로 취급 되기 떄문
+
+# ===============================================================
+
+print("=== count ===")
+
+# .count() - 문자열에 특정 글자의 수(int)를 반환
+# 문자열.count("찾을 글자") -< count 사용 방법
+print("banana".count("a")) # 3
+print("01012341234".count("12")) # 2
+print("layla@spreatics.com".count("@")) # 1 <- 이메일 확인 방법 !
+
+print("banana".count("na")) # 2
+
+# =============================================================
+
+print("==== find() ====")
+
+# .find() - 특정 글자가 처음 나오는 위치를 반환
+# 있으면 숫자가 나오고 없으면 -1 이 나온다.
+
+email = "hong@cp.com"
+at = email.find("@") # @ 위치의 인덱스인 4가 할당
+user_id = email[:at]
+print(user_id)
+
+mouse = "machinda@pipa.com"
+ab = mouse.find("@")
+print(mouse.find("ab")) 
+print(mouse.find("pass")) 
