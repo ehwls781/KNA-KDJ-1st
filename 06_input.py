@@ -15,7 +15,7 @@ print("5")
 # 이를 해결하기 위해 "가이드 문구"를 출력해줘야 함
 # 방법: input의 괄호 안에 "문자열"로 안내 문구 작성
 
-input("이름: ") # 입력해야 하는 값을 명시
+# input("이름: ") # 입력해야 하는 값을 명시
 
 #여러 값을 입력해야 하는 경우
 # 시도 1
@@ -136,3 +136,20 @@ print(country + "의" + city + "에서 살고 계시군요 !")
 kki = int(input("첫 번째 수: "))
 kaka = int(input("두 번째 수: "))
 print("합:", kki + kaka)
+
+# ========================================
+
+# int() : 글자 -> 정수
+# float() : 글자 -> 실수
+# str() : 숫자 -> 글자
+
+# ===========================================
+
+ondo = int(input("온도"))
+print(80 < ondo) # True
+print(0 <= ondo) # True
+
+babo = int(input("첫 번째 과목"))
+dodo = int(input("두 번째 과목"))
+gu = int(input("세 번째 과목"))
+print((babo + dodo + gu) / 3 >= 60) 
