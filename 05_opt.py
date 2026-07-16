@@ -72,3 +72,31 @@ print(100 / 3) # 33.3
 print(box ** 2) # 900
 print(20 * 30 * 50) # 30000
 
+# ===============================================================
+
+# 비교연산자
+# 미만, 초과, 이하, 이상, 같다, 다르다
+# <, >, <=, >=, ==, !=
+
+print(7 < 16) # True
+# 비교 결과는 무조건 True or False (bool)
+print(7 > 16) # False
+print(7 <= 16) # True
+print(7 >= 16) # False
+print(7 == 16) # False
+print(7 != 16) # True
+
+# 비교연산자는 무자열 비교도 가능
+print("hello" == "hello") # True
+print("정상" != "정상") # False
+
+# 1 대소문자 구분
+print("hello" == "Hello") # False
+
+# 2 공백이 있으면 다르다고 판단
+print("정상" == "정상 ") # False
+
+# 부정연산자 != (not)
+print("hello" != "hello") # False (두 값이 동일한데 느낌표로 인해 값이 반대로 출력)
+print("hello" != "hello" ) # True
+print("hello" != "Hello") # True
