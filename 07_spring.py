@@ -293,3 +293,125 @@ print(str2.endswith("월요일입니다!   여러분은 할 수 있어요!")) # 
 hsg = "sensor_log.csv"
 print(hsg.startswith("sensor"))
 print(hsg.endswith(".csv"))
+
+# ===============================================================
+
+print(type("잊어먹으면 안돼")) # class 'str'
+print(len("이렇게 썼죠")) # 6
+# endswith와 len의 차이점
+# endswith는 .으로 연결
+  # .으로 연결하는 이런 도구들은 "메서드"
+  # 문자열이나 int, float처럼 특정 자료형(객체) 내부에 포함된 기능
+# len은 . 사용 안함
+  # () -> GKATN
+  # LEN과 같이 개발자가 직접 선언하지 않은 기본 제공 함수 : 내장함수
+
+"str".startswith("s")
+# 123.startswith(1) 
+# .으로 사용하는 메서드들은 특정 자료형(객체)마다 다르다
+# int 자료형의 객체에는 startswith라는 메서드가 없다
+
+# print(len(123)) -> Error
+
+# ==============================================================
+
+# 메서드 - 특정 자료형(값=객체)에 소속된 함수
+# 문자열.메서드이름()
+# 추가 정보가 필요하면 괄호 안에 인자 (count('a'))
+# 인자 없으면 괄호만 비워 둠
+# word = "python"
+# print(word.upper()) # python
+# print(word.count("p")) # 1
+# print(word.startswinth("p")) # True
+
+# ===============================================================
+
+num = 1
+num = num + 1 # 2
+num += 1 # 3
+# += 복합할당연사자로 원래 내 자신의 값에 다음 오는 연산자와 값을 적용해서 재할당
+
+# ====================================================================
+
+# .upper() - 영문 글자를  모두 대문자로
+
+str3 = "abcdefg"
+print(str3) # abcdefg
+
+str.upper # ABCDEFG -> 반환은 대문자인데, 값에 재할당은 x
+print(str3) # abcdefg -> 기존 str3의 값인 소문자를 그대로 출력
+
+# 앞으로 계속 대문자로 변환한 값을 사용하고 싶다면
+# 변수에 재할당을 해야함
+# 변수 재할당에서 변수 스스로를 부르는 것이 가능
+# 재할당에서 변수 스스로 값을 부르려면 "재할당" 이어야 한다
+
+str3 = str3.upper()
+
+# 최초 변수 할당 시에는 저장된 값이 없어서 변수 스스로 할당 불가능
+
+aug = "babo"
+bobo = aug.upper()
+print(bobo)
+
+# lower() - 영문 글자를 모두 소문자로
+
+a = "Warning"
+b = a.lower()
+print(b)
+
+# capitalize - 문장 철 글자만("python is" > "Pythom is")
+# title - 단어 마다 첫 글자("hong gil" > "Hong Gil")
+
+user_name = "kim chul su"
+print(user_name.capitalize()) # Kim chul su
+print(user_name.title()) # Kim Chul Su
+
+# '를 사용한 경우
+print("i'm full".title) # I'M Full
+
+# isupper - islower() 
+print("ABC".isupper())
+print("abc".islower())
+print("Abc".islower())
+
+fama = "Sensor_LOG.CSV"
+mama = fama.lower()
+print(mama.startswith("sensor"))
+print(mama.endswith(".csv"))
+
+# ===========================================
+
+# .strip () - 문자열의 앞뒤 공배을 떼어 줌
+# .lstrip() - 왼쪽 공백만 제거
+# .rstrip() - 오른쪽 공백만 제거
+
+raw = "   정상    "
+print(raw.strip()) # 정상
+print(raw.lstrip()) # "정상    "
+print(raw.rstrip()) # "    정상"
+
+print("    정   상    ".strip) #   정    상 
+
+print(raw)  #  "   정    상    "
+  # strip은 재할당이나 새 변수에 할당하지 않는 이상 휘발
+
+# strip으로 문자 제거
+str4 = "===정상==="
+print(str4.strip("=")) # 정상
+# 인자로 전달한 양 끝의 =이 모두 지워짐
+
+str5 = "=정상====="
+print(str5.strip("=")) # 정상
+# 갯수 상관 없이 인자로 전달한 문자를 무조건 삭제
+print(str5.strip("= ")) # 정상
+# strip 자체가 공백을 지우는 것이기 떄문에 공백 상관없이 양 끝의 해당 문자열 삭제
+
+str6 = "==정==상===="
+print(str6.strip("=")) # 정==상
+# 글자 중간에 있는 문자열은 건드리지 않는다
+
+# strip으로 못 지우는 중간 공백을 
+# replace로 해결!!!!!!!!!!!!
+
+# ===================================================
