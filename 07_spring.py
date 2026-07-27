@@ -222,3 +222,74 @@ mouse = "machinda@pipa.com"
 ab = mouse.find("@")
 print(mouse.find("ab")) 
 print(mouse.find("pass")) 
+
+# SQE-00Q8 이라는 설비의 SQE만 뽑아내기
+SQE = "SQE-00Q8"
+# SQE_index = SQE.find("SQE")
+# print(SQE_index) # 0
+
+SQE_index = SQE.find("-")
+print(SQE_index) # 3
+SQE_fin = SQE[:SQE_index] # SQE[0:3] > SQE
+print(SQE_fin) # SQE
+
+# ==================================================================
+
+# index() 
+# 특정 문자열의 위치(인덱스 번호)를 반환
+# 앞에서 부터 가장 처음 나오는 인덱스 번호만 반환
+# 찾는 문자열이 없으면 Error 발생
+
+email = "ehwls781@naver.com"
+at = email.index("@") # 5
+print(email[0:at]) # ehwls781 - 시작 번호가 0이라면 start 생략 
+print(email[at+1:]) # 끝까지 출력하고 싶고, 뒤에 몇 글자가 있는지 모르니 생략
+
+# find에서 했던 SQE 뽑아내기 실습
+
+cs = "E200-008"
+csv = cs.index("-")
+csb = cs[:csv]
+print(csb)
+
+# ===================================================================
+
+# count()
+# 문자열에서 특정 문자열의 갯수 세기
+
+str = "a, b, c, d, e,a, a"
+print(str.count("a")) # 3
+print(str.count(",")) # 6
+print(str.count(", ")) # 5 -> count로 찾는 문자열과 동일해야 갯수를 셈
+
+# ====================================================================
+
+# startswith()
+# 특정 문자열로 시작하는지 검사 후 True/False (bool)
+
+print("E200-008".startswith("E200"))
+
+# 변수 활용
+e200 = "E200"
+print("E200-008".startswith(e200)) # 변수명은 따옴표로 감싸면 안된다.!!!!!!!!!!
+
+# ======================================================================
+
+# endswith()
+# 특정 문자열로 끝나는지 확인
+# True / False로 반환
+
+str2 = "월요일입니다! 여러분은 할 수 있어요!"
+
+print(str2.endswith("!")) # True
+print(str2.endswith("요!")) # True
+print(str2.endswith("음")) # False
+print(str2.endswith(" 월요일입니다! 여러분은 할 수 있어요!")) # False
+print(str2.endswith("월요일입니다! 여러분은 할 수 있어요!")) # True
+print(str2.endswith("월요일입니다!   여러분은 할 수 있어요!")) # False 
+
+# ===============================================================
+
+hsg = "sensor_log.csv"
+print(hsg.startswith("sensor"))
+print(hsg.endswith(".csv"))
