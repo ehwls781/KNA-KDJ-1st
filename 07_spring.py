@@ -590,3 +590,19 @@ ttt = "1, NORMAL ,25.3"
 bbb = ttt.split(",") # ['1', ' NORMAL ', '25.3']
 ccc = bbb[1].strip().lower()
 print(ccc) 
+
+# =================================================================
+
+# f-string - 문자열 안에 변수 값을 바로 끼워 넣는 출력
+# f"설비{code}점검"은"설비 EQP-001 점검"
+# f"{}" 형태로 변수를 중괄호로 감쌈
+# 따옴표 앞 f가 중괄호를 변수로 해석하라는 신호
+  # name = "홍길동"
+  # age = 25
+  # print(f"{name}님은 {age}살입니다")
+  # code = "EQP-001"
+  # print(f'설비 {code} 점검 완료')
+
+name = "PUMP_A"
+temp = 87
+print(f"설비 {name}, 온도 {temp}도")
