@@ -415,3 +415,178 @@ print(str6.strip("=")) # 정==상
 # replace로 해결!!!!!!!!!!!!
 
 # ===================================================
+
+# 체이닝 x
+raw = "    NORMAL    "
+step1 = raw.strip() # NORMAL
+step2 = step1.lower() # normal
+
+# 체이닝 x, 기존 변수에 재할당
+raw = raw.strip() # NORMAL
+raw = raw.lower() # normal
+
+# 체이닝 o
+chain = raw.strip().lower() # normal
+
+# 기존 변수에 재할당도 가능
+raw = raw.strip().lower() # normal
+
+# 변수에 할당하지 않고 사용 가능
+print(raw.strip().lower()) # normal
+
+phone = "   Warning   "
+iphone = phone.lower()
+print("[" + iphone + "]")
+iphone = phone.strip().lower()
+print("[" + iphone + "]")
+
+# strip() 메서드에 인자로 들어가는 문자열은 완전히 동일하지 않아도 전부 삭제
+
+str7 = "aaab 이렇게? cd"
+print(str7.strip("abcd")) # " 이렇게?"" 
+print(str7.strip("abcd ")) # "이렇게?"
+print(str7.strip("bc")) # "aabb 이렇게? cd"
+print(str7.strip("ab")) # " 이렇게? cd"
+
+# GPT한테 질문을 하면서 이해를 하는법
+str7 = "aaab 이렇게? cd"
+print(str7.strip("abcd")) # " 이렇게? "
+
+# 지금 출력 결과는 " 이렇게? " 나오고 있어
+# 내가 생각했을 떄 == 처럼 정확하게 "abcd" 순서가 아니면
+# strip이 안될 줄 알았는데 실행 결과를 보니 순서랑 상관없이
+# 인자로 전달한 문자열에 해당하는 글자가 확인하는 문자열 양 끝에
+# 하나라도 있으면 동작하는 것 같아.
+# 내가 이해한게 맞아 ?
+# 그러면 왜 이렇게 동작하는거야 ?
+
+# =================================================================
+
+# replace() - 특정 글자, 단어를 다른 것으로 바꾸기
+# replace(" ","") -> 중간 공백 제거
+# "010-1234-1234".replace("-","")
+# text = "정 상 가 동"
+# text = text.replace(" ","") # 공백제거
+# print(text) # 정상가동
+# 체이닝으로 연계도 가능 !
+# "fault""FAULT"를 모두 "고장"으로 통일
+# "3,000"의 쉼표를 제거해 int로 변환 가능
+
+print(" 정 상 가 동".replace(" ","")) # 정상가동 -> 모든 공백 제거 !
+print("  정     상 가 동".replace("  ","")) # 정 상 가 동 -> 공백이 두칸 붙어있는 경우만 제거
+
+# 글자 치환
+print("고장".replace("고장", "fault")) # fault
+print("고장".replace("고", "fault")) # fault장
+
+# replace() 문자열 단어 치환
+str8 = "설비 정상 가동"
+print(str8.replace("정상", "점검")) # 설비 점검 가동
+ 
+# replace() 체이닝
+num = "    010-1234-1234    "
+print(num.replace(" ","").replace("-","")) # 01012341234
+
+# ===========================================================
+
+# 리스트 - 여러 값을 순서대로 담는 그릇
+# 대괄호 안에 값들을 쉼표로 나열 (사과,배,감) -> 사과 = 0 , 배 = 1, 감 = 2
+# 번호로 조각 하나를 꺼냄(0부터,문자열과 동일)
+# 왼쪽에서부터 0으로 시작하는 인덱스가 자동 생성
+
+# split() - 정해진 구분자로 문자열을 여러 조각으로 나누기
+# 슬라이싱은 위치로 자르기, split은 구분자로 나누기
+"에스프레소 아메리카노 카페라떼".split()
+drinks = "에스프레소 아메리카노 카페라떼" # ["에스프레소", "아메리카노", "카페라떼"]
+print(drinks.split())
+  # 띄어쓰기를 기준으로 나뉘어진 세 개의 문자열을 대괄호에 감싸서 반환된다
+# 구분자를 특정하고 싶은 경우
+fruits = "딸기,거봉,키위,사쿠란보"
+print(fruits.split(",")) # ['딸기', '거봉', '키위', '사쿠란보']
+  # 문자열 콤마를 기준으로 분할
+
+# 원래는 공백이 영향을 받지만 print할때는 받지 않는다
+fruits2 = "딸기, 거봉, 키위, 사쿠란보"
+print(fruits2.split(",")) # ['딸기', ' 거봉', ' 키위', ' 사쿠란보']
+
+# 리스트의 인덱스
+fruits_list = fruits.split(",")
+print(fruits_list) # ['딸기', '거봉', '키위', '사쿠란보']
+
+# 거봉만 출력하기
+print(fruits_list[1]) # 거봉
+print(fruits_list[3]) # 사쿠란보
+print(fruits_list[-1]) # 사쿠란보
+
+# split 횟수 제한
+num = "010-1234-1234"
+# ["010", "1234-1234" ]
+print(num.split("-", 1))
+
+bam = "a,b,c,d"
+print(bam.split(","))
+
+# ==============================================================
+
+# join() - 리스트의 여러 조각을 하나의 문자열로 합치기
+# "구분자".join(리스트)
+
+# fruits_list.join(",")
+
+"-".join(fruits_list) # "딸기-거봉-키위-사쿠란보"
+",".join(fruits_list) # "딸기,거봉,키위,사쿠란보"
+", ".join(fruits_list) # "딸기, 거봉, 키위, 사쿠란보"
+
+ab = ["2025","01","15"]
+print("-".join(ab))
+
+
+# pyThon 출력하기
+
+word = "python"
+# 방법1 )srtip + capitalize
+# print(word[:2]) + word.strip("py").capitalize
+
+# 방법2 ) replace 사용
+print(word.replace("t","T"))
+
+# 방법3 ) 슬라이싱 + T만 upper 사용
+print(word[:2] + word[2].upper() + word[3:])
+
+# 방법4 ) 인덱싱으로 글자 하나씩 연결
+print(word[0] + word[1] + word[2] + word[3].upper() + word[4] + word[5])
+
+# 방법5 ) 인덱싱 + strip + title
+print(word[:2] + word.strip("py").title())
+
+# 방법6) split + join 
+print(word.split("t")) # ["py", "hon"]
+print("T".join(word.split("t"))) # pyThon
+
+# =====================================================================
+
+# print 함수의 sep, end
+print("2026", "07", "27") # 2026 07 27
+print("2026", "07", "27", sep="사랑해") # 2026사랑해07사랑해27
+# 공백대신에 문자열 삽입되어 이어짐
+
+print("안녕", "하세") # 안녕 하세
+print("안녕", "하세", end="요\n") #안녕 하세요
+# end 속성 사용 시 출력문 마지막에 해당 문자열이 붙어 삽임
+
+# print 함수 + 사용 시 sep과 end
+print("안녕", "하세", end="요" + "이렇게?!")  #안녕 하세요안녕 하세요이렇게?
+
+# 기본적으로 print문에는 sep으로 공백 한 칸,
+# end로 |n(줄바꿈)이 적용되어 있음
+# 근데 개발자가 각 속석을 직접 부여할 경우
+# 기본값이 아닌 전달받은 속성값을 적용
+
+note = "2026/07/27"
+notebo = note.split("/")
+print("-".join(notebo))
+
+ttt = "1, NORMAL ,25.3"
+bbb = ttt.split(",") # ['1', ' NORMAL ', '25.3']
+ccc = bbb[1].strip().lower()
+print(ccc) 
