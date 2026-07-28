@@ -257,10 +257,10 @@ print(csb)
 # count()
 # 문자열에서 특정 문자열의 갯수 세기
 
-str = "a, b, c, d, e,a, a"
-print(str.count("a")) # 3
-print(str.count(",")) # 6
-print(str.count(", ")) # 5 -> count로 찾는 문자열과 동일해야 갯수를 셈
+str1 = "a, b, c, d, e,a, a"
+print(str1.count("a")) # 3
+print(str1.count(",")) # 6
+print(str1.count(", ")) # 5 -> count로 찾는 문자열과 동일해야 갯수를 셈
 
 # ====================================================================
 
@@ -603,6 +603,38 @@ print(ccc)
   # code = "EQP-001"
   # print(f'설비 {code} 점검 완료')
 
+# 출력 결과 : 설비 PUMP_A, 온도 87도
+#기존방식
 name = "PUMP_A"
 temp = 87
+print("설비 " + name + ", 온도 " + str(temp))
+
+# f-string
 print(f"설비 {name}, 온도 {temp}도")
+
+# f-string 연산
+hour = 8
+
+# 우리는 하루에 8시간 수업을 듣고, 이는 480분입니다.
+print(f"우리는 하루에 {hour}시간 수업을 듣고, 이는 {hour * 60}분입니다.")
+
+ae = 77
+ab = 23
+ac = 45
+print(f"평균 {(ae + ab + ac) / 3}")
+
+hi = 87.456
+print(f"{hi:.2f}")  
+print(f"{hi:.3f}")
+
+# 만들기·출력 - 따옴표, print, f-string, 형변환
+# 꺼내기 - 인덱싱, 슬라이싱, split
+# 확인·다듬기 - len·in·find / strip·lower·replace·join
+
+by = " 5 , sensor_2 , Warning , 0.78912 "
+bi = by.strip().split(",")
+hi = bi[1].strip()
+hello = bi[2].strip().lower()
+hing = float(bi[3].strip())
+print(f"[센서 {hi}] 상태 {hello}, 측정값 {hing:.2f}")
+
