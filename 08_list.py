@@ -304,3 +304,11 @@ print(f.count("일회용컵")) # 3
 print(f.index("일회용컵")) # 1
 
 # =======================================================================
+
+kiki = [12, 24, 36, 1, 3, 5]
+kiki.sort()
+print(kiki) # [1, 3, 5, 12, 24, 36]
+kiki.reverse()
+print(kiki) # [36, 24, 12, 5, 3, 1]
+print(kiki.count(1)) # 1
+print(kiki.index(36)) # 0
