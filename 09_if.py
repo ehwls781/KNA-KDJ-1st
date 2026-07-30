@@ -86,29 +86,129 @@
 # # 입력값이 초록색이나 빨간색이어야만 정상 동작하는 점 주의
 # # 이상한 값 입력 시 "다시 입력하세요" 출력
 
-bi = input("색을 입력하세요") 
+# bi = input("색을 입력하세요") 
 
-# OR 사용 + if문 중첩
-if bi == "초록색" or bi == "빨간색":
-  if bi == "초록색":
-    print("건너")
-  else:
-    print("기다려")
-else:
-  print("다시 입력해")
+# # OR 사용 + if문 중첩
+# if bi == "초록색" or bi == "빨간색":
+#   if bi == "초록색":
+#     print("건너")
+#   else:
+#     print("기다려")
+# else:
+#   print("다시 입력해")
 
-# and 연산자 + 중첩
+# # and 연산자 + 중첩
 
-# 사람 체온 판단
-# 정상 체온 범위: 36.6 ~ 36.9
+# # 사람 체온 판단
+# # 정상 체온 범위: 36.6 ~ 36.9
 
 haha = float(input("체온을 입력하세요: "))
 
-if haha >= 36.2 and haha <= 36.9:
-  print("정상체온입니다")
+# if haha >= 36.2 and haha <= 36.9:
+#   print("정상체온입니다")
+# else:
+#   if haha > 36.9:
+#     print("열이 나요")
+#   else:
+#     print("체온이 낮아요")
+# print("판단 완료")
+
+# # elif
+# # else와 if만으로 분기하기에는 불편하고
+# # if 중첩이 너무 많아져 생김
+
+if haha <= 36.2:
+  print("당신은 저체온입니다.")
+elif haha >= 36.9 and haha < 37.8:
+  print("당신은 미열입니다")
+elif haha >= 37.8:
+  print("당신은 고온입니다")
 else:
-  if haha > 36.9:
-    print("열이 나요")
-  else:
-    print("체온이 낮아요")
-print("판단 완료")
+  print("당신은 정상입니다")
+print("체온 확인 완료")
+
+# elif의 순서 - 작은 값이 먼저 있으면 거기서 끝나기 때문에 큰값부터 넣기
+
+score = 50
+
+if score >= 90:
+  print("우수") 
+elif score >= 70:
+  print("보통")
+elif score >= 50:
+  print("미흡")
+else:
+  print("비상")
+
+  # not 연산자
+
+  if not (3 == 5):
+    print("출력됩니다")
+  # 3과 5는 같지 않으니 False가 되지만 
+  # 앞에 not이 있어서 False를 True로 뒤집어 if가 인식
+
+# ==========================================================
+
+ondo = int(input("온도: "))
+if ondo > 80:
+  print("위험")
+elif ondo > 60:
+  print("주의")
+else:
+  print("정상")
+
+iad = "asas12"
+passw = "aass34"
+ipad = input("아이디: ")
+homepad = input("비밀번호: ")
+if ipad == iad and homepad == passw:
+  print("로그인성공")
+else:
+  print("로그인실패")
+
+ondo = int(input("온도: "))
+jin = float(input("진동: "))
+jun = int(input("전류: "))
+
+if ondo > 80 and jin > 4.0:
+  print("위험위험위험위험")
+elif jun > 60 and ondo > 70:
+  print("점검할까?")
+elif jin > 2.5:
+  print("진동 관찰해")
+else:
+  ("정상이야")
+
+# ================================
+
+# 2단 출력하기
+for su in range(1, 10):
+  print(f"2 x {su} = {2 * su}")
+
+# 1 ~ 5 단 출력하기
+# 필요한 변수 : 2개 (몇 단 , 곱할 값)
+# 몇 단 : 1 ~ 5
+# 곱할 값 : 1 ~ 9
+# for문 중첩 사용
+# 1단은 유지한 상태에서 곱할 값은 커져야 함
+# 1 x 1 = 1
+# 1 x 2 = 2
+
+# 단수를 유지하고 안에서 또 점점 커지는 변수가 있어야 하니
+# 바깥 for문은 단수를 늘리고
+# 안쪽 for문은 곱할 수를 늘리도록 구성
+
+for i in range(1,6): # 1~5단 까지 반복
+  for j in range(1, 10): # 1단에서 9단까지 곱하고 반복 종료
+    print(f"{i} x {j} = {i * j}" )
+  print(f"---{i}단 끝 ---")
+
+# i단 끝
+
+# =================================================================
+
+for i in range(1,10): # 1~5단 까지 반복
+  for j in range(1, 10): # 1단에서 9단까지 곱하고 반복 종료
+    if j 
+    print(f"{i} x {j} = {i * j}" )
+  print(f"---{i}단 끝 ---")
