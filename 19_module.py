@@ -123,3 +123,45 @@ for file_name in file_list:
 
 print(" ======================================")
 # 모듈 도움말 보기 : 참고만 하고 구글링한 웹사이트
+# print(dir(math))
+# help(math.sqrt)
+
+# 파일이 존재하는지 확인
+# 운영체제(윈도우/멕/리녹스)마다 경로를 나타내는 방법이 달라서
+#  상황에 맞게 경로문자열을 만들어주는 os의 함수를 사용
+
+path = os.path.join("data", "08_prees.csv")
+
+# 실제로 경로문자열을 따라서 찾아가면
+# 해당 파일이 있는지 확인: True/False
+if os.path.exists(path):
+  print(f"파일 있음: {path}")
+
+# ===== 실습 3
+
+practice_dir = 0
+print(os.getcwd())
+data_list = os.listdir(practice_dir)
+for item in data_list:
+    print(item)
+    if item.endswith(".csv"):
+        print("[csv]", item)
+
+# === 실습 1
+import math
+print(math.sqrt(16))  # 4.0
+
+from math import sqrt as square_root
+print(square_root(16))  # 4.0
+
+import math as m
+print(m.ceil(4.2))
+
+# === 실습 5.
+
+file_count = len(os.listdir(practice_dir))
+check_time = datetime.datetime.now()
+print(f"파일 {file_count}개, 점검 시각 {check_time}")
+
+# ==================================================================
+
