@@ -133,3 +133,23 @@ import pandas as pd
 
 df = pd.read_csv("KNA-KDJ-1st/12_metro_digital.csv")
 df.info()
+
+# 실습 6. describe로 이상 신호 찾기
+
+import pandas as pd
+
+df = pd.read_csv("KNA-KDJ-1st/12_metro_compressor.csv")
+print(df.shape)
+print(df.haed())
+
+df.info()
+
+print(df.describe())
+
+# 실습 7. 통계량 문장으로 표시
+# 설비 센서 데이터의 "한 열(1 column)"을 묘사
+
+import pandas as pd
+
+df = pd.read_csv("KNA-KDJ-1st/12_metro_compressor.csv")
+df.info()
